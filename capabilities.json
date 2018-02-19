@@ -1,0 +1,107 @@
+{
+    "dataRoles": [
+        {
+            "displayName": "id + label",
+            "name": "category",
+            "kind": "Grouping"
+        },
+        {
+            "displayName": "X",
+            "name": "x",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "Y",
+            "name": "y",
+            "kind": "Measure"
+        }
+    ],
+    "dataViewMappings": [
+        {
+            "conditions": [
+                {
+                    "category": {
+                        "max": 4
+                    },
+                    "measure": {
+                        "max": 1
+                    }
+                }
+            ],
+            "categorical": {
+                "categories": {
+                    "for": {
+                        "in": "category"
+                    },
+                    "dataReductionAlgorithm": {
+                    "top": {
+                        "count": 30000
+                    }
+                }  
+                },
+                "values": {
+                    "select": [
+                        {
+                            "bind": {
+                                "to": "x"
+                            }
+                        },
+                        {
+                            "bind": {
+                                "to": "y"
+                            }
+                        }
+                    ],
+                    "dataReductionAlgorithm": {
+                    "top": {
+                        "count": 30000
+                    }
+                }  
+                }
+            }
+        }
+    ],
+    "objects": {
+        "enableAxis": {
+            "displayName": "Enable Axis",
+            "properties": {
+                "show": {
+                    "displayName": "Enable Axis",
+                    "type": { "bool": true }
+                }
+            }
+        },
+        "colorSelector": {
+            "displayName": "Data Colors",
+            "properties": {
+                "fill": {
+                    "displayName": "Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "general": {
+            "displayName": "General View",
+            "properties": {
+                "opacity": {
+                    "displayName": "Bars Opacity",
+                    "type": {
+                        "integer": true
+                    }
+                },
+                "filter": {
+                    "type": {
+                        "filter": true
+                    }
+                }
+            }
+        }
+    },
+    "supportsHighlight": true
+}

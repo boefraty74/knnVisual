@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "ES5",
+    "sourceMap": true,
+    "out": "./.tmp/build/visual.js",
+    "sourceRoot": "../../src/",
+    "declaration": false
+  },
+  "files": [
+    "typings/index.d.ts",
+    ".api/v1.5.0/PowerBI-visuals.d.ts",
+    "src/tooltipServiceWrapper.ts",
+    "src/tree.ts",
+    "src/objectEnumerationUtility.ts",
+    "src/localization/localizationHelper.ts",
+    "src/localization/localizedResources.ts",
+    "src/ml-knn.js"
+  ]
+}
